@@ -67,5 +67,10 @@ export default createTheme({
       fontWeight: "bold",
       color: arcBlue,
     },
+    body1: {
+      fontSize: "1.5rem",
+      color: arcGrey,
+      fontWeight: 300,
+    },
   },
 });

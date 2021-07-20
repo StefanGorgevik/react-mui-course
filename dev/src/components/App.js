@@ -5,6 +5,13 @@ import React, { useState } from "react";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
 import LandingPage from "./LandingPage";
+import Services from "./Services";
+import CustomSoftware from "./CustomSoftware";
+import MobileApps from "./MobileApps";
+import Websites from "./Websites";
+import Revolution from "./Revolution";
+import About from "./About";
+
 const App = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [value, setValue] = useState(0);
@@ -28,24 +35,63 @@ const App = () => {
               />
             )}
           />
-          <Route exact path="/services" component={() => <div>Services</div>} />
+          <Route
+            exact
+            path="/services"
+            component={() => (
+              <Services
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
           <Route
             exact
             path="/customsoftware"
-            component={() => <div>Custom Software</div>}
+            component={() => (
+              <CustomSoftware
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
           <Route
             exact
             path="/mobileapps"
-            component={() => <div>Mobile Apps</div>}
+            component={() => (
+              <MobileApps
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
-          <Route exact path="/websites" component={() => <div>Websites</div>} />
+          <Route
+            exact
+            path="/websites"
+            component={() => (
+              <Websites
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
           <Route
             exact
             path="/revolution"
-            component={() => <div>Revolution</div>}
+            component={() => (
+              <Revolution
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
           />
-          <Route exact path="/about" component={() => <div>About Us</div>} />
+          <Route
+            exact
+            path="/about"
+            component={() => (
+              <About setValue={setValue} setSelectedIndex={setSelectedIndex} />
+            )}
+          />
           <Route
             exact
             path="/contact"
