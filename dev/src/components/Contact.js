@@ -20,7 +20,7 @@ import phoneIcon from "../assets/phone.svg";
 import emailIcon from "../assets/email.svg";
 import airplane from "../assets/send.svg";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   background: {
     backgroundImage: `url(${background})`,
     backgroundPosition: "center",
@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme) => ({
     height: "60em",
     paddingBottom: "10em",
     [theme.breakpoints.down("md")]: {
-      backgroundImage: `url(${mobileBackground})`,
-    },
+      backgroundImage: `url(${mobileBackground})`
+    }
   },
   estimateButton: {
     ...theme.typography.estimate,
@@ -42,12 +42,12 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "5em",
     marginLeft: "2em",
     "&:hover": {
-      backgroundColor: theme.palette.secondary.light,
+      backgroundColor: theme.palette.secondary.light
     },
     [theme.breakpoints.down("md")]: {
       marginLeft: 0,
-      marginRight: 0,
-    },
+      marginRight: 0
+    }
   },
   learnButton: {
     ...theme.typography.learnButton,
@@ -55,13 +55,13 @@ const useStyles = makeStyles((theme) => ({
     height: 35,
     padding: 5,
     [theme.breakpoints.down("md")]: {
-      marginBottom: "2em",
-    },
+      marginBottom: "2em"
+    }
   },
   message: {
     border: `2px solid ${theme.palette.common.blue}`,
     marginTop: "5em",
-    borderRadius: 5,
+    borderRadius: 5
   },
   sendButton: {
     ...theme.typography.estimate,
@@ -71,13 +71,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1rem",
     backgroundColor: theme.palette.common.orange,
     "&:hover": {
-      backgroundColor: theme.palette.secondary.light,
+      backgroundColor: theme.palette.secondary.light
     },
     [theme.breakpoints.down("sm")]: {
       height: 40,
-      width: 225,
-    },
-  },
+      width: 225
+    }
+  }
 }));
 
 export default function Contact(props) {
@@ -103,7 +103,7 @@ export default function Contact(props) {
   const [alert, setAlert] = useState({ open: false, color: "" });
   const [alertMessage, setAlertMesssage] = useState("");
 
-  const onChange = (event) => {
+  const onChange = event => {
     let valid;
 
     switch (event.target.id) {
@@ -147,11 +147,11 @@ export default function Contact(props) {
             email: email,
             name: name,
             phone: phone,
-            message: message,
-          },
+            message: message
+          }
         }
       )
-      .then((res) => {
+      .then(res => {
         setLoading(false);
         setOpen(false);
         setName("");
@@ -161,7 +161,7 @@ export default function Contact(props) {
         setAlert({ open: true, color: "#4BB543" });
         setAlertMesssage("Message sent successfully!");
       })
-      .catch((err) => {
+      .catch(err => {
         setLoading(false);
         setAlert({ open: true, color: "#FF3232" });
         setAlertMesssage("Something went wrong! Please try again.");
@@ -186,7 +186,7 @@ export default function Contact(props) {
         alignItems="center"
         style={{
           marginBottom: matchesMD ? "5em" : 0,
-          marginTop: matchesSM ? "1em" : matchesMD ? "5em" : 0,
+          marginTop: matchesSM ? "1em" : matchesMD ? "5em" : 0
         }}
         lg={4}
         xl={3}
@@ -260,7 +260,7 @@ export default function Contact(props) {
                   id="name"
                   fullWidth
                   value={name}
-                  onChange={(event) => setName(event.target.value)}
+                  onChange={event => setName(event.target.value)}
                 />
               </Grid>
               <Grid item style={{ marginBottom: "0.5em" }}>
@@ -295,7 +295,7 @@ export default function Contact(props) {
                 fullWidth
                 rows={10}
                 id="message"
-                onChange={(event) => setMessage(event.target.value)}
+                onChange={event => setMessage(event.target.value)}
               />
             </Grid>
             <Grid item container justify="center" style={{ marginTop: "2em" }}>
@@ -338,8 +338,8 @@ export default function Contact(props) {
               ? 0
               : matchesMD
               ? "15em"
-              : "25em",
-          },
+              : "25em"
+          }
         }}
       >
         <DialogContent>
@@ -355,7 +355,7 @@ export default function Contact(props) {
                 id="name"
                 fullWidth
                 value={name}
-                onChange={(event) => setName(event.target.value)}
+                onChange={event => setName(event.target.value)}
               />
             </Grid>
             <Grid item style={{ marginBottom: "0.5em" }}>
@@ -390,7 +390,7 @@ export default function Contact(props) {
               fullWidth
               rows={10}
               id="message"
-              onChange={(event) => setMessage(event.target.value)}
+              onChange={event => setMessage(event.target.value)}
             />
           </Grid>
           <Grid
@@ -431,8 +431,8 @@ export default function Contact(props) {
         open={alert.open}
         ContentProps={{
           style: {
-            backgroundColor: alert.color,
-          },
+            backgroundColor: alert.color
+          }
         }}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
         message={alertMessage}
@@ -453,7 +453,7 @@ export default function Contact(props) {
           item
           style={{
             marginLeft: matchesMD ? 0 : "3em",
-            textAlign: matchesMD ? "center" : "inherit",
+            textAlign: matchesMD ? "center" : "inherit"
           }}
         >
           <Grid container direction="column">

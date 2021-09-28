@@ -18,15 +18,15 @@ import technologyAnimation from "../animations/technologyAnimation/data.json";
 
 import CallToAction from "./ui/CallToAction";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "1.5em",
-      paddingRight: "1.5em",
-    },
-  },
+      paddingRight: "1.5em"
+    }
+  }
 }));
 
 export default function Revolution(props) {
@@ -40,8 +40,8 @@ export default function Revolution(props) {
     autoplay: false,
     animationData: technologyAnimation,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
+      preserveAspectRatio: "xMidYMid slice"
+    }
   };
 
   return (
@@ -74,7 +74,7 @@ export default function Revolution(props) {
             style={{
               maxWidth: matchesSM ? 300 : "40em",
               marginRight: matchesMD ? 0 : "5em",
-              marginBottom: matchesMD ? "5em" : 0,
+              marginBottom: matchesMD ? "5em" : 0
             }}
           />
         </Grid>

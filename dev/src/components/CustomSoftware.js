@@ -2,13 +2,11 @@ import React from "react";
 import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-  Grid,
-  IconButton,
-  Typography,
-  useMediaQuery,
-  Hidden,
-} from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Hidden from "@material-ui/core/Hidden";
 
 import backArrow from "../assets/backArrow.svg";
 import forwardArrow from "../assets/forwardArrow.svg";
@@ -24,24 +22,24 @@ import uxAnimation from "../animations/uxAnimation/data";
 
 import CallToAction from "./ui/CallToAction";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   heading: {
-    maxWidth: "40em",
+    maxWidth: "40em"
   },
   arrowContainer: {
-    marginTop: "0.5em",
+    marginTop: "0.5em"
   },
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
     [theme.breakpoints.down("sm")]: {
       paddingLeft: "1.5em",
-      paddingRight: "1.5em",
-    },
+      paddingRight: "1.5em"
+    }
   },
   itemContainer: {
-    maxWidth: "40em",
-  },
+    maxWidth: "40em"
+  }
 }));
 
 export default function CustomSoftware(props) {
@@ -56,8 +54,8 @@ export default function CustomSoftware(props) {
     autoplay: false,
     animationData: documentsAnimation,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
+      preserveAspectRatio: "xMidYMid slice"
+    }
   };
 
   const scaleOptions = {
@@ -65,8 +63,8 @@ export default function CustomSoftware(props) {
     autoplay: false,
     animationData: scaleAnimation,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
+      preserveAspectRatio: "xMidYMid slice"
+    }
   };
 
   const automationOptions = {
@@ -74,8 +72,8 @@ export default function CustomSoftware(props) {
     autoplay: false,
     animationData: automationAnimation,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
+      preserveAspectRatio: "xMidYMid slice"
+    }
   };
 
   const uxOptions = {
@@ -83,8 +81,8 @@ export default function CustomSoftware(props) {
     autoplay: false,
     animationData: uxAnimation,
     rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
+      preserveAspectRatio: "xMidYMid slice"
+    }
   };
 
   return (
@@ -207,7 +205,7 @@ export default function CustomSoftware(props) {
           style={{
             maxWidth: "40em",
             marginTop: matchesSM ? "10em" : 0,
-            marginBottom: matchesSM ? "10em" : 0,
+            marginBottom: matchesSM ? "10em" : 0
           }}
         >
           <Grid item>

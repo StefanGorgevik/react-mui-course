@@ -1,7 +1,7 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/core/styles";
-import theme from "./ui/Theme";
 import React, { useState } from "react";
+import { ThemeProvider } from "@material-ui/styles";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import theme from "./ui/Theme";
 import Header from "./ui/Header";
 import Footer from "./ui/Footer";
 import LandingPage from "./LandingPage";
@@ -12,10 +12,12 @@ import Websites from "./Websites";
 import Revolution from "./Revolution";
 import About from "./About";
 import Contact from "./Contact";
+import Estimate from "./Estimate";
 
-const App = () => {
+function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [value, setValue] = useState(0);
+
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
@@ -29,8 +31,9 @@ const App = () => {
           <Route
             exact
             path="/"
-            component={() => (
+            render={props => (
               <LandingPage
+                {...props}
                 setValue={setValue}
                 setSelectedIndex={setSelectedIndex}
               />
@@ -39,8 +42,9 @@ const App = () => {
           <Route
             exact
             path="/services"
-            component={() => (
+            render={props => (
               <Services
+                {...props}
                 setValue={setValue}
                 setSelectedIndex={setSelectedIndex}
               />
@@ -49,8 +53,9 @@ const App = () => {
           <Route
             exact
             path="/customsoftware"
-            component={() => (
+            render={props => (
               <CustomSoftware
+                {...props}
                 setValue={setValue}
                 setSelectedIndex={setSelectedIndex}
               />
@@ -59,8 +64,9 @@ const App = () => {
           <Route
             exact
             path="/mobileapps"
-            component={() => (
+            render={props => (
               <MobileApps
+                {...props}
                 setValue={setValue}
                 setSelectedIndex={setSelectedIndex}
               />
@@ -69,8 +75,9 @@ const App = () => {
           <Route
             exact
             path="/websites"
-            component={() => (
+            render={props => (
               <Websites
+                {...props}
                 setValue={setValue}
                 setSelectedIndex={setSelectedIndex}
               />
@@ -79,8 +86,9 @@ const App = () => {
           <Route
             exact
             path="/revolution"
-            component={() => (
+            render={props => (
               <Revolution
+                {...props}
                 setValue={setValue}
                 setSelectedIndex={setSelectedIndex}
               />
@@ -89,26 +97,41 @@ const App = () => {
           <Route
             exact
             path="/about"
-            component={() => (
-              <About setValue={setValue} setSelectedIndex={setSelectedIndex} />
-            )}
-          />
-          <Route
-            exact
-            path="/contact"
-            component={() => (
-              <Contact
+            render={props => (
+              <About
+                {...props}
                 setValue={setValue}
                 setSelectedIndex={setSelectedIndex}
               />
             )}
           />
-          <Route exact path="/estimate" component={() => <div>Estimate</div>} />
+          <Route
+            exact
+            path="/contact"
+            render={props => (
+              <Contact
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/estimate"
+            render={props => (
+              <Estimate
+                {...props}
+                setValue={setValue}
+                setSelectedIndex={setSelectedIndex}
+              />
+            )}
+          />
         </Switch>
         <Footer setValue={setValue} setSelectedIndex={setSelectedIndex} />
       </BrowserRouter>
     </ThemeProvider>
   );
-};
+}
 
 export default App;
